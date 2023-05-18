@@ -4,7 +4,7 @@
       <div class="source-item">
         <div class="img">
           <img id="sourceImg" src="../assets/img/cat.jpg" alt="" ref="sourceImg">
-          <div id="sourceText" draggable="true" ref="sourceText">我是一只猫</div>
+          <div id="sourceText" draggable="false" ref="sourceText">我是一只猫呀</div>
         </div>
       </div>
     </div>
@@ -41,10 +41,9 @@ export default {
       this.startOffsetX = e.offsetX
       this.startOffsetY = e.offsetY
     },
-    // 目标区域  => 必须在dragenter以及dragover时阻止默认事件，才会触发drop事件。对元素的处理一般放在drop事件中即可。
+    // 目标区域  => 必须在dragover时阻止默认事件，才会触发drop事件。对元素的处理一般放在drop事件中即可。
     ondragenter (e) {
       console.log('ondragenter')
-      e.preventDefault()
     },
     ondragover (e) {
       e.preventDefault()

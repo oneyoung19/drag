@@ -1,5 +1,10 @@
 <template>
-  <editor-content :editor="editor" :class="isFocused ? 'is_focus' : ''"/>
+<div class="editor" :class="isFocused ? 'is_focus' : ''">
+  <button @click="editor.chain().focus().toggleBold().run()">
+    Bold
+  </button>
+  <editor-content :editor="editor"/>
+</div>
 </template>
 
 <script>
@@ -37,11 +42,12 @@ export default {
 
   beforeDestroy () {
     this.editor.destroy()
+    // menu 字体颜色 背景颜色 加粗 斜体 清除样式
   }
 }
 </script>
 
-<style>
+<style lang="less">
 .ProseMirror {
   border-radius: 5px;
   background: #fff;
@@ -54,10 +60,14 @@ export default {
   margin: 0;
 }
 
-.ProseMirror:hover {
+.editor {
+  /* box-sizing: border-box; */
+  border: 1px dashed transparent;
+}
+.editor:hover {
   border: 1px dashed rgb(24, 144, 255) !important;
 }
-.is_focus > .ProseMirror {
+.editor.is_focus {
   border: 1px solid rgb(24, 144, 255) !important;
 }
 

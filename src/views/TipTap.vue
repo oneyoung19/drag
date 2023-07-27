@@ -47,7 +47,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style>
 .ProseMirror {
   border-radius: 5px;
   background: #fff;

@@ -10,10 +10,16 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home
-  }, {
+  },
+  {
     path: '/scroll',
     name: 'scroll',
     component: Scroll
+  },
+  {
+    path: '/pdf',
+    name: 'Pdf',
+    component: () => import('@/views/Pdf')
   }
 ]
 

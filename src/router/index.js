@@ -25,6 +25,11 @@ const routes = [
     path: '/pdf',
     name: 'Pdf',
     component: () => import('@/views/Pdf')
+  },
+  {
+    path: '/tiptap',
+    name: 'Tiptap',
+    component: () => import('../views/TipTap.vue')
   }
 ]
 

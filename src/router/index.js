@@ -17,6 +17,11 @@ const routes = [
     component: Scroll
   },
   {
+    path: '/rough-pdf',
+    name: 'RoughPdf',
+    component: () => import('@/views/RoughPdf')
+  },
+  {
     path: '/pdf',
     name: 'Pdf',
     component: () => import('@/views/Pdf')
